@@ -21,32 +21,61 @@ namespace DataAccess.Data
             _db = db;
         }
 
-        public Task<IEnumerable<UserModel>> GetUsers() =>
+        public List<UserModel> GetUsers() =>
             _db.LoadData<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetAll", new { });
 
-        public async Task<UserModel?> GetUser(int id)
+        public Task<IEnumerable<UserModel>> GetUsersAsync() =>
+            _db.LoadDataAsync<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetAll", new { });
+
+        public UserModel? GetUser(int id)
         {
-            var results = await _db.LoadData<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetById", new { Id = id });
+            var results = _db.LoadData<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetById", new { Id = id });
             return results.FirstOrDefault();
         }
 
-        //public Task<int> InsertUserAndGetId(UserModel user)
-        //{
-        //    var p = new DynamicParameters();
-        //    p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
-        //    p.AddDynamicParams(new { FullName = user.FirstName, LastName = user.LastName });
-            
-        //    _db.SaveData(storedProcedure: "dbo.spUser_Insert", p);
-        //    return p.Get<int>("@Id");            
-        //}
+        public async Task<UserModel?> GetUserAsync(int id)
+        {
+            var results = await _db.LoadDataAsync<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetById", new { Id = id });
+            return results.FirstOrDefault();
+        }
 
-        public Task InsertUser(UserModel user) =>
+        public int? InsertUser_GetId(UserModel user)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.AddDynamicParams(new { FirstName = user.FirstName, LastName = user.LastName });
+
+            _db.SaveData(storedProcedure: "dbo.spUser_Insert", p);
+            return p.Get<int>("@Id");
+        }
+
+        public async Task<int?> InsertUser_GetIdAsync(UserModel user)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            p.AddDynamicParams(new { FirstName = user.FirstName, LastName = user.LastName });
+
+            await _db.SaveDataAsync(storedProcedure: "dbo.spUser_Insert", p);
+            return p.Get<int>("@Id");
+        }
+
+        public bool InsertUser(UserModel user) =>
             _db.SaveData(storedProcedure: "dbo.spUser_Insert", new { user.FirstName, user.LastName });
 
-        public Task UpdateUser(UserModel user) =>
+        public Task InsertUserAsync(UserModel user) =>
+            _db.SaveDataAsync(storedProcedure: "dbo.spUser_Insert", new { user.FirstName, user.LastName });
+
+        public bool UpdateUser(UserModel user) =>
             _db.SaveData(storedProcedure: "dbo.spUser_Update", user);
 
-        public Task DeleteUser(int id) =>
+        public Task UpdateUserAsync(UserModel user) =>
+            _db.SaveDataAsync(storedProcedure: "dbo.spUser_Update", user);
+
+        public bool DeleteUser(int id) =>
             _db.SaveData(storedProcedure: "dbo.spUser_Delete", new { Id = id });
+
+        public Task DeleteUserAsync(int id) =>
+            _db.SaveDataAsync(storedProcedure: "dbo.spUser_Delete", new { Id = id });
+
     }
 }

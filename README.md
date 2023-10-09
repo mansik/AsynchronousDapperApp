@@ -1,8 +1,9 @@
 ﻿# AsynchronousDapperApp
 
-## 설명:  비동기처리 및 여러 RDBMS에 적용가능하도록 설계
+## 설명:  비동기처리, 동기처리 및 여러 RDBMS에 적용가능하도록 설계
 * 클래스 라이브러리 프로젝트
 * DB 프로젝트 생성 및 게시 방법
+* `구조: form1, form2.. <---> Data <---> DbAccess <---> DB`
 
 * [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I?si=Nkf9Xj5p0ZtKXZZm)
 * 조회수 197,563회  2021. 11. 22.
