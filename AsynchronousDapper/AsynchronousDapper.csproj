@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\AsynchronousDapper.DataAccess\AsynchronousDapper.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

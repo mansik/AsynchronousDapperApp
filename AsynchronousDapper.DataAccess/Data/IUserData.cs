@@ -1,6 +1,6 @@
-﻿using DataAccess.Models;
+﻿using AsynchronousDapper.DataAccess.Models;
 
-namespace DataAccess.Data
+namespace AsynchronousDapper.DataAccess.Data
 {
     public interface IUserData
     {

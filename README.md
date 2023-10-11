@@ -24,7 +24,7 @@ Part 2: Minimal API in .NET 6 Using Dapper an...
 ### winform project
 	* 프로젝트명 AsynchronousDapper, 솔루션명 AsynchronousDapperApp
 ### SQL Server DataBase project 추가: DB 프로젝트 생성 및 게시 방법
-	* 프로젝트명 UserDB
+	* 프로젝트명 AsynchronousDapper.UserDB
 	* dbo 폴더 추가
 		* Tables 폴더 추가
 			* `Table` 추가
@@ -52,20 +52,20 @@ Part 2: Minimal API in .NET 6 Using Dapper an...
 	* DataBase project에서 `게시` 선택
 		* 편집에서 DB 인스턴스 선택
 		* Database 이름 AsynchronousDapperUserDB
-		* 스크립트 이름 UserDB.sql => 자동으로 생성됨
+		* 스크립트 이름 AsynchronousDapper.UserDB.sql => 자동으로 생성됨
 		* Profile로 저장
-	* 그러면 프로젝트에 UserDB.publish.xml파일로 존재
+	* 그러면 프로젝트에 AsynchronousDapper.UserDB.publish.xml파일로 존재
 	* .GitIgnore를 통해 저장소에 빠지므로 마우스 우측클릭-> git ->`소스 제어에 무시된 파일 추가`를 통해 추가한다.
-	* UserDB.publish.xml을 더블클릭하면 게시화면을 호출할 수 있으며,
+	* AsynchronousDapper.UserDB.publish.xml을 더블클릭하면 게시화면을 호출할 수 있으며,
 	* 게시 한다.
 	* Database가 제대로 생성 되었는지 확인한다.
 ### 클래스 라이브러리 프로젝트 추가
-	* 프로젝트명 DataAccess
+	* 프로젝트명 AsynchronousDapper.DataAccess
 ### 솔루션 선택(클래스 라이브러리 프로젝트에서는 안먹혀서 생략 -> 아래 다른 방법 사용)
 	* 추가 - new EditorConfig, 추가가 안되어 프로젝트에서 추가하여 이동함
 	* EditorConfig에서 코드 스타일 -> 코드블럭 기분 설정-> 네임스페이스 선언 = `파일범위 지정됨`으로 변경
-	* `파일범위 지정됨`은 namespace DataAccess.Models {}=> using namespace DataAccess.Models; 로 변경시켜주므로 소스가 깔끔해짐
-### DataAccess 프로젝트 선택
+	* `파일범위 지정됨`은 namespace AsynchronousDapper.DataAccess.Models {}=> using namespace AsynchronousDapper.DataAccess.Models; 로 변경시켜주므로 소스가 깔끔해짐
+### AsynchronousDapper.DataAccess 프로젝트 선택
 	* `구조: form1, form2.. <---> Data <---> DbAccess <---> DB`
 	
 	* Models 폴더 추가: Entity 클래스 모음

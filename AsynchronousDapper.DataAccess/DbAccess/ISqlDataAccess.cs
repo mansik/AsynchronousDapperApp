@@ -1,4 +1,4 @@
-﻿namespace DataAccess.DbAccess
+﻿namespace AsynchronousDapper.DataAccess.DbAccess
 {
     public interface ISqlDataAccess
     {

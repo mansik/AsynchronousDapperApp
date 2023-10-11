@@ -1,7 +1,7 @@
+using AsynchronousDapper.DataAccess.Data;
+using AsynchronousDapper.DataAccess.DbAccess;
+using AsynchronousDapper.DataAccess.Models;
 using Dapper;
-using DataAccess.Data;
-using DataAccess.DbAccess;
-using DataAccess.Models;
 using System.Data;
 using System.Diagnostics;
 

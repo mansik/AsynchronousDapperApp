@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using DataAccess.DbAccess;
-using DataAccess.Models;
+using AsynchronousDapper.DataAccess.DbAccess;
+using AsynchronousDapper.DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Data
+namespace AsynchronousDapper.DataAccess.Data
 {
     /// <summary>
     /// Query를 통한 결과 처리

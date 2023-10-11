@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DataAccess.DbAccess
+namespace AsynchronousDapper.DataAccess.DbAccess
 {
     /// <summary>
     /// MS SQL Server 접근
