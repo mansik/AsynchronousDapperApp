@@ -65,6 +65,9 @@ namespace AsynchronousDapper.DataAccess.Data
         public Task InsertUserAsync(UserModel user) =>
             _db.SaveDataAsync(storedProcedure: "dbo.spUser_Insert", new { user.FirstName, user.LastName });
 
+        //user객체를 사용할려면 user의 Property 와 프로시저의 인자가 같아야 된다.
+        // => 아니면 다음처럼 인자를 지정해야 한다.
+        // _db.SaveData(storedProcedure: "dbo.spUser_Update", new {user.FirstName, user.LastName});
         public bool UpdateUser(UserModel user) =>
             _db.SaveData(storedProcedure: "dbo.spUser_Update", user);
 
