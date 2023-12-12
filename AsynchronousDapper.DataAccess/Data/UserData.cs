@@ -1,25 +1,16 @@
-﻿using Dapper;
-using AsynchronousDapper.DataAccess.DbAccess;
+﻿using AsynchronousDapper.DataAccess.DbAccess;
 using AsynchronousDapper.DataAccess.Models;
-using System;
-using System.Collections.Generic;
+using Dapper;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AsynchronousDapper.DataAccess.Data
 {
     /// <summary>
     /// Query를 통한 결과 처리
     /// </summary>
-    public class UserData : IUserData
+    public class UserData(ISqlDataAccess db) : IUserData
     {
-        private readonly ISqlDataAccess _db;
-        public UserData(ISqlDataAccess db)
-        {
-            _db = db;
-        }
+        private readonly ISqlDataAccess _db = db;
 
         public List<UserModel> GetUsers() =>
             _db.LoadData<UserModel, dynamic>(storedProcedure: "dbo.spUser_GetAll", new { });

@@ -1,23 +1,14 @@
 ﻿using AsynchronousDapper.DataAccess.Data;
 using AsynchronousDapper.DataAccess.DbAccess;
 using AsynchronousDapper.DataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AsynchronousDapper
 {
     public partial class FormSync : Form
     {
         private bool _isNew = false;
-        private readonly IUserData _data;
+        private readonly UserData _data;
 
         public FormSync()
         {

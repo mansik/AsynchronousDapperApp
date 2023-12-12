@@ -1,8 +1,6 @@
 using AsynchronousDapper.DataAccess.Data;
 using AsynchronousDapper.DataAccess.DbAccess;
 using AsynchronousDapper.DataAccess.Models;
-using Dapper;
-using System.Data;
 using System.Diagnostics;
 
 namespace AsynchronousDapper
@@ -10,7 +8,7 @@ namespace AsynchronousDapper
     public partial class FormAsync : Form
     {
         private bool _isNew = false;
-        private readonly IUserData _data;
+        private readonly UserData _data;
 
         public FormAsync()
         {
@@ -102,8 +100,7 @@ namespace AsynchronousDapper
 
         private void showFormSyncbutton_Click(object sender, EventArgs e)
         {
-            FormSync formSync = new FormSync();
-            formSync.ShowDialog();
+            new FormSync().ShowDialog();
         }
     }
 }
