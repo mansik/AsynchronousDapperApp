@@ -1,6 +1,8 @@
 ﻿# AsynchronousDapperApp
 
-## 설명:  비동기처리, 동기처리 및 여러 RDBMS에 적용가능하도록 설계
+## About
+* C#, WinForm, MSSQL 2022, DevExpress(Report), Dapper
+* 비동기처리, 동기처리 및 여러 RDBMS에 적용가능하도록 설계
 * 클래스 라이브러리 프로젝트
 * DB 프로젝트 생성 및 게시 방법
 * `구조: form1, form2.. <---> Data <---> DbAccess <---> DB`
@@ -11,14 +13,15 @@ Minimal APIs are now the default in .NET 6. I thought that we should take some t
 
 Part 2: Minimal API in .NET 6 Using Dapper an...  
 
-## 환경
-* Visual Studio: [ ] 2019, [x] 2022
-* 프로젝트 생성: [ ] .Net Framework, [x] .Net WinForm(windows form)
-* Package 
-  * [ ] DevExpress 18.2
-* NuGet
-  * [x] System.Data.SqlClient 
-  * [x] Dapper
+## Environment
+* IDE: Visual Studio 2022
+* Language: C#
+* Applied Project Template: .NET 8.0 (.Net WinForm(windows form))    
+* NuGet  
+    * Dapper
+	* System.Data.SqlClient
+* Third Party Libraries    
+* DataBase: MS SQL 2022
 
 ## 작업
 ### winform project
